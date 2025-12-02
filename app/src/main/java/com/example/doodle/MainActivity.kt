@@ -25,6 +25,17 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.graphics.drawscope.withTransform
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import com.example.doodle.data.Line
+import com.example.doodle.ui.drawing.DrawCanvas
+
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,21 +48,9 @@ class MainActivity : ComponentActivity() {
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
-                    Canvas(modifier = Modifier.fillMaxSize()) {
-                        val canvasQuadrantSize = size / 2F
-                        drawRect(
-                            color = Color.Magenta,
-                            size = canvasQuadrantSize
-                        )
-                        val canvasWidth = size.width
-                        val canvasHeight = size.height
-                        drawLine(
-                            start = Offset(x = canvasWidth, y = 0f),
-                            end = Offset(x = 0f, y = canvasHeight),
-                            color = Color.Blue
-                        )
-                    }
+
                 }
+                DrawCanvas()
             }
         }
     }
@@ -72,4 +71,5 @@ fun GreetingPreview() {
         Greeting("Android!")
     }
 }
+
 
