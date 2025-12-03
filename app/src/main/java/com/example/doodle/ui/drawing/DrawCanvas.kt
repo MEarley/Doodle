@@ -41,8 +41,10 @@ private val BUTTON_WIDTH = 20.dp
 @Composable
 fun DrawCanvas() {
     val strokeHistory = remember { mutableStateListOf<Line>() }
+    val eraserColor = MaterialTheme.colorScheme.background
     var currentColor by remember { mutableStateOf(Color.Black) }
     var sliderPosition by remember { mutableFloatStateOf(0f) }
+
 
     Scaffold(
         topBar = {
@@ -110,8 +112,8 @@ fun DrawCanvas() {
                         }
                         // Select White (Eraser)
                         Button(
-                            colors = ButtonDefaults.buttonColors(Color.White),
-                            onClick = { currentColor = Color.White },
+                            colors = ButtonDefaults.buttonColors(eraserColor),
+                            onClick = { currentColor = eraserColor },
                             modifier = Modifier.padding(3.dp).width(BUTTON_WIDTH),
                             border = BorderStroke(1.dp, Color.Black)
                         ) {
