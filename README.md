@@ -27,3 +27,10 @@ The clear button will remove all strokes on the screen.
 Using the Brush Size Slider, brush Size will affect the line thickness of your brush strokes.
 
 ![brush strokes](images/brushsize.png)
+
+## References
+
+- [Android Developer: Scaffold](https://developer.android.com/develop/ui/compose/components/scaffold)
+- [GitHub: Draw App Kotlin Composable](https://github.com/eosrmg/draw-app-kotlin-composable)
+
+
